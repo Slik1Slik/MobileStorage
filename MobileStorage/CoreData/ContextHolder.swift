@@ -29,7 +29,7 @@ final class CoreDataContextHolder: NSObject {
         self.managedObjectContext = persistentContainer.viewContext
     }
 
-    func saveContext(completion: @escaping (Result<Void, Error>) -> ()) {
+    func saveContext(completion: @escaping (Result<Void, CoreDataError>) -> ()) {
         
         let context = persistentContainer.viewContext
         context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
@@ -40,7 +40,7 @@ final class CoreDataContextHolder: NSObject {
                 completion(.success(()))
             } catch {
                 context.rollback()
-                completion(.failure(error))
+                completion(.failure(.failedToSaveObject))
                 let nserror = error as NSError
                 NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
                 #if DEBUG
