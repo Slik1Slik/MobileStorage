@@ -29,7 +29,7 @@ final class CoreDataContextHolder: NSObject {
         self.managedObjectContext = persistentContainer.viewContext
     }
 
-    func saveContext(completion: @escaping (Result<Void, CoreDataError>) -> ()) {
+    func saveContext(completion: @escaping (Result<Void, CoreDataError>) -> () = { _ in }) {
         
         let context = persistentContainer.viewContext
         context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
