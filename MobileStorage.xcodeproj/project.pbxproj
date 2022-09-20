@@ -15,6 +15,10 @@
 		56A6411328DA206C0016E216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56A6411228DA206C0016E216 /* Assets.xcassets */; };
 		56A6411628DA206C0016E216 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56A6411428DA206C0016E216 /* LaunchScreen.storyboard */; };
 		56A6412828DA2E650016E216 /* ContextHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6412728DA2E650016E216 /* ContextHolder.swift */; };
+		56A6412A28DA2EF30016E216 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6412928DA2EF30016E216 /* StorageManager.swift */; };
+		56A6412D28DA31670016E216 /* DescribedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6412C28DA31670016E216 /* DescribedError.swift */; };
+		56A6412F28DA31980016E216 /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6412E28DA31980016E216 /* AnyError.swift */; };
+		56A6413128DA31EE0016E216 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6413028DA31EE0016E216 /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		56A6411528DA206C0016E216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56A6411728DA206C0016E216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56A6412728DA2E650016E216 /* ContextHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextHolder.swift; sourceTree = "<group>"; };
+		56A6412928DA2EF30016E216 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		56A6412C28DA31670016E216 /* DescribedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribedError.swift; sourceTree = "<group>"; };
+		56A6412E28DA31980016E216 /* AnyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
+		56A6413028DA31EE0016E216 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 		56A6410528DA206B0016E216 /* MobileStorage */ = {
 			isa = PBXGroup;
 			children = (
+				56A6412B28DA31510016E216 /* Error */,
 				56A6412628DA2E510016E216 /* CoreData */,
 				56A6410628DA206B0016E216 /* AppDelegate.swift */,
 				56A6410828DA206B0016E216 /* SceneDelegate.swift */,
@@ -77,8 +86,19 @@
 			isa = PBXGroup;
 			children = (
 				56A6412728DA2E650016E216 /* ContextHolder.swift */,
+				56A6412928DA2EF30016E216 /* StorageManager.swift */,
+				56A6413028DA31EE0016E216 /* Error.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		56A6412B28DA31510016E216 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				56A6412C28DA31670016E216 /* DescribedError.swift */,
+				56A6412E28DA31980016E216 /* AnyError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,9 +173,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				56A6412828DA2E650016E216 /* ContextHolder.swift in Sources */,
+				56A6412D28DA31670016E216 /* DescribedError.swift in Sources */,
 				56A6410B28DA206B0016E216 /* ViewController.swift in Sources */,
+				56A6412F28DA31980016E216 /* AnyError.swift in Sources */,
 				56A6410728DA206B0016E216 /* AppDelegate.swift in Sources */,
+				56A6412A28DA2EF30016E216 /* StorageManager.swift in Sources */,
 				56A6410928DA206B0016E216 /* SceneDelegate.swift in Sources */,
+				56A6413128DA31EE0016E216 /* Error.swift in Sources */,
 				56A6411128DA206B0016E216 /* MobileStorage.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
