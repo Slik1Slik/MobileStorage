@@ -14,7 +14,7 @@
 		56A6411128DA206B0016E216 /* MobileStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56A6410F28DA206B0016E216 /* MobileStorage.xcdatamodeld */; };
 		56A6411328DA206C0016E216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56A6411228DA206C0016E216 /* Assets.xcassets */; };
 		56A6411628DA206C0016E216 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56A6411428DA206C0016E216 /* LaunchScreen.storyboard */; };
-		56A6412828DA2E650016E216 /* CoreDataContextHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6412728DA2E650016E216 /* CoreDataContextHolder.swift */; };
+		56A6412828DA2E650016E216 /* ContextHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6412728DA2E650016E216 /* ContextHolder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		56A6411228DA206C0016E216 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56A6411528DA206C0016E216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56A6411728DA206C0016E216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56A6412728DA2E650016E216 /* CoreDataContextHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataContextHolder.swift; sourceTree = "<group>"; };
+		56A6412728DA2E650016E216 /* ContextHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextHolder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 		56A6412628DA2E510016E216 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				56A6412728DA2E650016E216 /* CoreDataContextHolder.swift */,
+				56A6412728DA2E650016E216 /* ContextHolder.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -152,7 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56A6412828DA2E650016E216 /* CoreDataContextHolder.swift in Sources */,
+				56A6412828DA2E650016E216 /* ContextHolder.swift in Sources */,
 				56A6410B28DA206B0016E216 /* ViewController.swift in Sources */,
 				56A6410728DA206B0016E216 /* AppDelegate.swift in Sources */,
 				56A6410928DA206B0016E216 /* SceneDelegate.swift in Sources */,
