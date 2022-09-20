@@ -51,6 +51,6 @@ final class CoreDataContextHolder: NSObject {
     }
     
     enum Model: String {
-        case mobile = "Mobile"
+        case mobile = "MobileStorage"
     }
 }
