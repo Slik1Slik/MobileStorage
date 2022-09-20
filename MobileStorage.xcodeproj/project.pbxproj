@@ -19,6 +19,8 @@
 		56A6412D28DA31670016E216 /* DescribedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6412C28DA31670016E216 /* DescribedError.swift */; };
 		56A6412F28DA31980016E216 /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6412E28DA31980016E216 /* AnyError.swift */; };
 		56A6413128DA31EE0016E216 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6413028DA31EE0016E216 /* Error.swift */; };
+		56A6413E28DA3FA90016E216 /* Mobile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6413C28DA3FA90016E216 /* Mobile+CoreDataClass.swift */; };
+		56A6413F28DA3FA90016E216 /* Mobile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6413D28DA3FA90016E216 /* Mobile+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		56A6412C28DA31670016E216 /* DescribedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribedError.swift; sourceTree = "<group>"; };
 		56A6412E28DA31980016E216 /* AnyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
 		56A6413028DA31EE0016E216 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		56A6413C28DA3FA90016E216 /* Mobile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mobile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		56A6413D28DA3FA90016E216 /* Mobile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mobile+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 			children = (
 				56A6412B28DA31510016E216 /* Error */,
 				56A6412628DA2E510016E216 /* CoreData */,
+				56A6413328DA3DBD0016E216 /* MobileStorage */,
 				56A6410628DA206B0016E216 /* AppDelegate.swift */,
 				56A6410828DA206B0016E216 /* SceneDelegate.swift */,
 				56A6410A28DA206B0016E216 /* ViewController.swift */,
@@ -99,6 +104,15 @@
 				56A6412E28DA31980016E216 /* AnyError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		56A6413328DA3DBD0016E216 /* MobileStorage */ = {
+			isa = PBXGroup;
+			children = (
+				56A6413C28DA3FA90016E216 /* Mobile+CoreDataClass.swift */,
+				56A6413D28DA3FA90016E216 /* Mobile+CoreDataProperties.swift */,
+			);
+			path = MobileStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56A6412828DA2E650016E216 /* ContextHolder.swift in Sources */,
+				56A6413E28DA3FA90016E216 /* Mobile+CoreDataClass.swift in Sources */,
 				56A6412D28DA31670016E216 /* DescribedError.swift in Sources */,
 				56A6410B28DA206B0016E216 /* ViewController.swift in Sources */,
 				56A6412F28DA31980016E216 /* AnyError.swift in Sources */,
@@ -181,6 +196,7 @@
 				56A6410928DA206B0016E216 /* SceneDelegate.swift in Sources */,
 				56A6413128DA31EE0016E216 /* Error.swift in Sources */,
 				56A6411128DA206B0016E216 /* MobileStorage.xcdatamodeld in Sources */,
+				56A6413F28DA3FA90016E216 /* Mobile+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

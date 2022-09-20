@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Mobile" representedClassName="Mobile" syncable="YES" codeGenerationType="class">
+    <entity name="Mobile" representedClassName="Mobile" syncable="YES">
         <attribute name="imei" attributeType="String"/>
         <attribute name="model" attributeType="String"/>
     </entity>
