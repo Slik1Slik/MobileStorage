@@ -13,7 +13,6 @@ final class CoreDataMobileStorage : MobileStorage {
     private var contextHolder: CoreDataContextHolder?
     
     init() {
-        
         self.contextHolder = (UIApplication.shared.delegate as? AppDelegate)?.mobileContextHolder
     }
     
@@ -22,10 +21,11 @@ final class CoreDataMobileStorage : MobileStorage {
         guard let context = contextHolder?.managedObjectContext else {
             return []
         }
+        let sortDescriptor = NSSortDescriptor(key: "model", ascending: true)
+        let mobileArray = CoreDataStorageManager<MobileObject>.getAll(context: context,
+                                                                      sortDescriptors: [sortDescriptor])
         
-        let mobileArray = CoreDataStorageManager<MobileObject>.getAll(context: context)
-        
-        return (NSOrderedSet(array: mobileArray).set as? Set<Mobile>) ?? []
+        return (NSOrderedSet(array: mobileArray.map { $0.toMobile }).set as? Set<Mobile>) ?? []
     }
     
     func findByImei(_ imei: String) -> Mobile? {
@@ -51,8 +51,17 @@ final class CoreDataMobileStorage : MobileStorage {
         }
         
         let properties = propertiesToUpdate(from: mobile)
-        try CoreDataStorageManager<MobileObject>.add(context: context,
-                                                     propertiesToUpdate: properties)
+        
+        if !exists(mobile) {
+            try CoreDataStorageManager<MobileObject>.add(context: context,
+                                                         properties: properties)
+        } else {
+            let predicate = predicate(forEMIE: mobile.imei, with: .fullMatch)
+            try CoreDataStorageManager<MobileObject>.update(context: context,
+                                                            predicate: predicate,
+                                                            propertiesToUpdate: properties)
+        }
+        
         try contextHolder?.saveContext()
         
         return mobile
@@ -67,6 +76,7 @@ final class CoreDataMobileStorage : MobileStorage {
         let predicate = predicate(forEMIE: product.imei, with: .fullMatch)
         try CoreDataStorageManager<MobileObject>.delete(context: context,
                                                         predicate: predicate)
+        try contextHolder?.saveContext()
     }
     
     func exists(_ product: Mobile) -> Bool {
@@ -87,7 +97,7 @@ extension CoreDataMobileStorage {
     private func predicate(forEMIE emei: String,
                            with option: PredicateOption) -> NSPredicate {
         
-        let predicateFormat = "emei \(option.rawValue) %@"
+        let predicateFormat = "imei \(option.rawValue) %@"
         return NSPredicate(format: predicateFormat, emei)
     }
     
@@ -99,7 +109,7 @@ extension CoreDataMobileStorage {
 //MARK: - Properties to update
 extension CoreDataMobileStorage {
     
-    private func propertiesToUpdate(from mobile: Mobile) -> [AnyHashable : Any] {
+    private func propertiesToUpdate(from mobile: Mobile) -> [String : Any] {
         
         return ["model" : mobile.model, "imei" : mobile.imei]
     }
