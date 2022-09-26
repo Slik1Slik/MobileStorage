@@ -23,3 +23,10 @@ extension MobileObject {
 extension MobileObject : Identifiable {
 
 }
+
+extension MobileObject {
+    var toMobile: Mobile {
+        return .init(imei: self.imei,
+                     model: self.model)
+    }
+}
