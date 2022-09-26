@@ -18,9 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window = UIWindow(windowScene: scene)
         
-        let vc = UINavigationController(rootViewController: MobileListViewController())
+        //Change storage here
+        let builder = MobileListMVVMModuleBuilder(.coreData)
         
-        window?.rootViewController = vc
+        let vc = builder.build()
+        
+        let nvc = UINavigationController(rootViewController: vc)
+        
+        NavigationControllerManager.shared.setNVC(nvc)
+        
+        window?.rootViewController = nvc
         window?.makeKeyAndVisible()
     }
 
