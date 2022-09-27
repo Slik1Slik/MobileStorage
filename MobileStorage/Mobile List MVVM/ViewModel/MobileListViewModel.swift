@@ -14,6 +14,8 @@ final class MobileListViewModel : MobileListViewModelProtocol {
     var representedData: [Mobile] = []
 
     var onDataUpdated: () -> () = { }
+    
+    var onDelete: () -> () = { }
 
     var onError: (DescribedError) -> () = { _ in }
 
@@ -43,6 +45,7 @@ extension MobileListViewModel {
         do {
             try mobileStorage.delete(representedData[index])
             representedData.remove(at: index)
+            onDelete()
         } catch let error as DescribedError {
             onError(error)
         } catch {
