@@ -22,6 +22,14 @@ final class MobileListViewModel : MobileListViewModelProtocol {
     private var cachedRepresentedData: [Mobile] = []
 
     private var mobileStorage: MobileStorage = CoreDataMobileStorage()
+    
+    init() {
+        observeCoreDataContextChanges()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 //MARK: - Setup
 extension MobileListViewModel  {
@@ -78,5 +86,16 @@ extension MobileListViewModel {
     func select(atIndex index: Int) {
         let builder = MobileDetailsMVVMModuleBuilder(.coreData, mode: .update(representedData[index].imei))
         NavigationControllerManager.shared.push(vc: builder.build())
+    }
+}
+//MARK: - CoreData context observation
+extension MobileListViewModel {
+    private func observeCoreDataContextChanges() {
+        NotificationCenter.default.addObserver(forName: CoreDataContextHolder.storageDidChangeNotification,
+                                               object: nil,
+                                               queue: .main) { [weak self] _ in
+            self?.fetch()
+            self?.onDataUpdated()
+        }
     }
 }
