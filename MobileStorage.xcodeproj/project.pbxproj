@@ -84,6 +84,7 @@
 		56A6419528E2F11D0016E216 /* MobileDetailsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailsTextField.swift; sourceTree = "<group>"; };
 		56A6419728E2F33E0016E216 /* MobileDetailsMVVMModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailsMVVMModuleBuilder.swift; sourceTree = "<group>"; };
 		56A6419A28E332B40016E216 /* MobileDetailsValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailsValidator.swift; sourceTree = "<group>"; };
+		56A6419D28E34E5D0016E216 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +101,7 @@
 		56A640FA28DA206B0016E216 = {
 			isa = PBXGroup;
 			children = (
+				56A6419D28E34E5D0016E216 /* README.md */,
 				56A6410528DA206B0016E216 /* MobileStorage */,
 				56A6410428DA206B0016E216 /* Products */,
 			);
