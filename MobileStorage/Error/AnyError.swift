@@ -8,6 +8,12 @@
 final class AnyError : DescribedError {
     
     var description: String {
-        return ""
+        return _description
+    }
+    
+    private let _description: String
+    
+    init(description: String = "") {
+        self._description = description
     }
 }
