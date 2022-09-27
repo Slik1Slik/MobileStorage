@@ -8,6 +8,8 @@
 import CoreData
 
 final class CoreDataContextHolder: NSObject {
+    
+    static let storageDidChangeNotification: Notification.Name = .init(rawValue: "storageDidChangeNotification")
 
     private(set) var managedObjectContext: NSManagedObjectContext?
     
@@ -37,6 +39,7 @@ final class CoreDataContextHolder: NSObject {
         if context.hasChanges {
             do {
                 try context.save()
+                notifyObservers()
             } catch {
                 context.rollback()
                 let nserror = error as NSError
@@ -48,5 +51,12 @@ final class CoreDataContextHolder: NSObject {
     
     enum Model: String {
         case mobile = "MobileStorage"
+    }
+}
+//MARK: - Notifications
+extension CoreDataContextHolder {
+    
+    private func notifyObservers() {
+        NotificationCenter.default.post(name: Self.storageDidChangeNotification, object: nil)
     }
 }
