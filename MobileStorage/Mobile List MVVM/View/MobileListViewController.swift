@@ -82,7 +82,7 @@ extension MobileListViewController {
     }
     
     @objc private func addMobileBarButtonTapped() {
-        
+        viewModel.add()
     }
     
     private func updateNoResultsPlugLabelVisability() {
@@ -175,6 +175,7 @@ extension MobileListViewController : ViewModelListener {
     
     func listenViewModel() {
         listenDataUpdated()
+        listenDataDeleted()
         listenErrorReceived()
         viewModel.fetch()
     }
@@ -187,10 +188,16 @@ extension MobileListViewController : ViewModelListener {
         }
     }
     
+    private func listenDataDeleted() {
+        viewModel.onDelete = { [weak self] in
+            guard let self = self else { return }
+            self.updateNoResultsPlugLabelVisability()
+        }
+    }
+    
     private func listenErrorReceived() {
         viewModel.onError = {  [weak self] error in
             self?.presentInfoAlert(title: error.title, message: error.description)
         }
     }
 }
-
