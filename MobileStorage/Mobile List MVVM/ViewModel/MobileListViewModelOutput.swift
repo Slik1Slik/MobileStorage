@@ -9,5 +9,6 @@ protocol MobileListViewModelOutput {
     
     var representedData: [Mobile] { get }
     var onDataUpdated: () -> () { get set }
+    var onDelete: () -> () { get set }
     var onError: (DescribedError) -> () { get set }
 }
