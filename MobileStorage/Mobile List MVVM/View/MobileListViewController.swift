@@ -32,7 +32,6 @@ final class MobileListViewController: UIViewController {
         setupTableView()
         setupAddMobileBarButton()
         updateNoResultsPlugLabelVisability()
-        addTapGestureToHideKeyboard()
     }
 }
 //MARK: - Setup UI
@@ -51,7 +50,23 @@ extension MobileListViewController {
         searchBar.isTranslucent = false
         searchBar.backgroundImage = UIImage()
         searchBar.delegate = self
+        searchBar.inputAccessoryView = keyboardToolbar()
         navigationItem.titleView = searchBar
+    }
+    
+    private func keyboardToolbar() -> UIToolbar {
+        let bar = UIToolbar()
+        let doneButton = UIBarButtonItem(title: "Done",
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(keyboardToolbarDoneButtonTapped))
+        bar.items = [doneButton]
+        bar.sizeToFit()
+        return bar
+    }
+    
+    @objc private func keyboardToolbarDoneButtonTapped() {
+        view.hideKeyboard()
     }
     
     private func setupTableView() {
@@ -72,15 +87,6 @@ extension MobileListViewController {
     
     private func updateNoResultsPlugLabelVisability() {
         noResultsPlugLabel.isHidden = !viewModel.representedData.isEmpty
-    }
-    
-    private func addTapGestureToHideKeyboard() {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onTap))
-        view.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
-    @objc private func onTap() {
-        view.hideKeyboard()
     }
 }
 //MARK: - Layout

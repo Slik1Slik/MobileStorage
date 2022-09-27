@@ -36,6 +36,13 @@
 		56A6418128E1CB4E0016E216 /* MobileListViewModelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6418028E1CB4E0016E216 /* MobileListViewModelInput.swift */; };
 		56A6418528E1CB910016E216 /* ViewModel Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6418428E1CB910016E216 /* ViewModel Listener.swift */; };
 		56A6418928E1E5F80016E216 /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6418828E1E5F80016E216 /* UIKit+Extensions.swift */; };
+		56A6418E28E1EBFE0016E216 /* MobileDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6418D28E1EBFE0016E216 /* MobileDetailsViewModel.swift */; };
+		56A6419028E1EC100016E216 /* MobileDetailsViewModelOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6418F28E1EC100016E216 /* MobileDetailsViewModelOutput.swift */; };
+		56A6419228E1EC1B0016E216 /* MobileDetailsViewModelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6419128E1EC1B0016E216 /* MobileDetailsViewModelInput.swift */; };
+		56A6419428E2EF040016E216 /* MobileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6419328E2EF040016E216 /* MobileDetailsViewController.swift */; };
+		56A6419628E2F11D0016E216 /* MobileDetailsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6419528E2F11D0016E216 /* MobileDetailsTextField.swift */; };
+		56A6419828E2F33E0016E216 /* MobileDetailsMVVMModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6419728E2F33E0016E216 /* MobileDetailsMVVMModuleBuilder.swift */; };
+		56A6419B28E332B40016E216 /* MobileDetailsValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6419A28E332B40016E216 /* MobileDetailsValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +77,13 @@
 		56A6418028E1CB4E0016E216 /* MobileListViewModelInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListViewModelInput.swift; sourceTree = "<group>"; };
 		56A6418428E1CB910016E216 /* ViewModel Listener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel Listener.swift"; sourceTree = "<group>"; };
 		56A6418828E1E5F80016E216 /* UIKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
+		56A6418D28E1EBFE0016E216 /* MobileDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailsViewModel.swift; sourceTree = "<group>"; };
+		56A6418F28E1EC100016E216 /* MobileDetailsViewModelOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailsViewModelOutput.swift; sourceTree = "<group>"; };
+		56A6419128E1EC1B0016E216 /* MobileDetailsViewModelInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailsViewModelInput.swift; sourceTree = "<group>"; };
+		56A6419328E2EF040016E216 /* MobileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailsViewController.swift; sourceTree = "<group>"; };
+		56A6419528E2F11D0016E216 /* MobileDetailsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailsTextField.swift; sourceTree = "<group>"; };
+		56A6419728E2F33E0016E216 /* MobileDetailsMVVMModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailsMVVMModuleBuilder.swift; sourceTree = "<group>"; };
+		56A6419A28E332B40016E216 /* MobileDetailsValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailsValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +120,7 @@
 				56A6415B28DA5F6F0016E216 /* Routing */,
 				56A6415828DA584D0016E216 /* Architecture */,
 				56A6414028DA43A90016E216 /* Mobile List MVVM */,
+				56A6418A28E1EB9F0016E216 /* Mobile Details MVVM */,
 				56A6412B28DA31510016E216 /* Error */,
 				56A6412628DA2E510016E216 /* CoreData */,
 				56A6413328DA3DBD0016E216 /* MobileStorage */,
@@ -220,6 +235,7 @@
 			children = (
 				56A6416728DB8F5F0016E216 /* MVVMModuleBuilder.swift */,
 				56A6416928DB8F9E0016E216 /* MobileListMVVMModuleBuilder.swift */,
+				56A6419728E2F33E0016E216 /* MobileDetailsMVVMModuleBuilder.swift */,
 			);
 			path = "MVVM Module Building";
 			sourceTree = "<group>";
@@ -254,6 +270,43 @@
 				56A6417A28E1C83B0016E216 /* LayoutGuideConstants.swift */,
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		56A6418A28E1EB9F0016E216 /* Mobile Details MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				56A6418C28E1EBDF0016E216 /* View */,
+				56A6418B28E1EBCB0016E216 /* ViewModel */,
+				56A6419928E3329F0016E216 /* Helpers */,
+			);
+			path = "Mobile Details MVVM";
+			sourceTree = "<group>";
+		};
+		56A6418B28E1EBCB0016E216 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				56A6419128E1EC1B0016E216 /* MobileDetailsViewModelInput.swift */,
+				56A6418F28E1EC100016E216 /* MobileDetailsViewModelOutput.swift */,
+				56A6418D28E1EBFE0016E216 /* MobileDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		56A6418C28E1EBDF0016E216 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56A6419328E2EF040016E216 /* MobileDetailsViewController.swift */,
+				56A6419528E2F11D0016E216 /* MobileDetailsTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56A6419928E3329F0016E216 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				56A6419A28E332B40016E216 /* MobileDetailsValidator.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,16 +383,20 @@
 				56A6413E28DA3FA90016E216 /* Mobile+CoreDataClass.swift in Sources */,
 				56A6412D28DA31670016E216 /* DescribedError.swift in Sources */,
 				56A6417B28E1C83B0016E216 /* LayoutGuideConstants.swift in Sources */,
+				56A6419228E1EC1B0016E216 /* MobileDetailsViewModelInput.swift in Sources */,
 				56A6416328DB82370016E216 /* Mobile.swift in Sources */,
+				56A6419828E2F33E0016E216 /* MobileDetailsMVVMModuleBuilder.swift in Sources */,
 				56A6410B28DA206B0016E216 /* ViewController.swift in Sources */,
 				56A6416828DB8F5F0016E216 /* MVVMModuleBuilder.swift in Sources */,
 				56A6417D28E1CAD80016E216 /* MobileListViewModel.swift in Sources */,
 				56A6416C28DB8FF20016E216 /* MobileListViewController.swift in Sources */,
+				56A6418E28E1EBFE0016E216 /* MobileDetailsViewModel.swift in Sources */,
 				56A6418128E1CB4E0016E216 /* MobileListViewModelInput.swift in Sources */,
 				56A6417F28E1CAFB0016E216 /* MobileListViewModelOutput.swift in Sources */,
 				56A6417128DB92900016E216 /* MockMobileStorage.swift in Sources */,
 				56A6412F28DA31980016E216 /* AnyError.swift in Sources */,
 				56A6416128DB81E70016E216 /* StorageProtocol.swift in Sources */,
+				56A6419B28E332B40016E216 /* MobileDetailsValidator.swift in Sources */,
 				56A6418928E1E5F80016E216 /* UIKit+Extensions.swift in Sources */,
 				56A6410728DA206B0016E216 /* AppDelegate.swift in Sources */,
 				56A6412A28DA2EF30016E216 /* StorageManager.swift in Sources */,
@@ -350,9 +407,12 @@
 				56A6413128DA31EE0016E216 /* Error.swift in Sources */,
 				56A6416528DB829F0016E216 /* CoreData MobileStorage.swift in Sources */,
 				56A6417328DF49390016E216 /* MobileListTableViewCell.swift in Sources */,
+				56A6419028E1EC100016E216 /* MobileDetailsViewModelOutput.swift in Sources */,
 				56A6411128DA206B0016E216 /* MobileStorage.xcdatamodeld in Sources */,
 				56A6415F28DA5F6F0016E216 /* NavigationControllerManager.swift in Sources */,
 				56A6413F28DA3FA90016E216 /* Mobile+CoreDataProperties.swift in Sources */,
+				56A6419628E2F11D0016E216 /* MobileDetailsTextField.swift in Sources */,
+				56A6419428E2EF040016E216 /* MobileDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
