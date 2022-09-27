@@ -69,12 +69,14 @@ extension MobileListViewModel {
 //MARK: - Add
 extension MobileListViewModel {
     func add() {
-        //NavigationControllerManager.shared.navigationController?.present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>)
+        let builder = MobileDetailsMVVMModuleBuilder(.coreData, mode: .add)
+        NavigationControllerManager.shared.push(vc: builder.build())
     }
 }
 //MARK: - Select
 extension MobileListViewModel {
     func select(atIndex index: Int) {
-        //NavigationControllerManager.shared.push(vc: )
+        let builder = MobileDetailsMVVMModuleBuilder(.coreData, mode: .update(representedData[index].imei))
+        NavigationControllerManager.shared.push(vc: builder.build())
     }
 }
